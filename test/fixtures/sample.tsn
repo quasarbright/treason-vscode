@@ -1,0 +1,8 @@
+;; Sample Treason file for testing
+(define (hello name)
+  (string-append "Hello, " name "!"))
+
+(define (add x y)
+  (+ x y))
+
+(define result (hello "World"))

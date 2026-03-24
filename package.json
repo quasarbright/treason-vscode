@@ -1,0 +1,80 @@
+{
+  "name": "treason-language-support",
+  "displayName": "Treason Language Support",
+  "description": "Language support for Treason programming language",
+  "version": "0.1.0",
+  "author": {
+    "email": "mdelmonacochs@gmail.com",
+    "name": "Mike Delmonaco"
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:treason"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "treason",
+        "extensions": [".tsn"],
+        "aliases": ["Treason", "treason"]
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Treason Language Configuration",
+      "properties": {
+        "treason.racketPath": {
+          "type": "string",
+          "default": "racket",
+          "description": "Path to the racket executable",
+          "scope": "resource"
+        },
+        "treason.serverScriptPath": {
+          "type": "string",
+          "default": "../treason/server.rkt",
+          "description": "Path to the language server script",
+          "scope": "resource"
+        },
+        "treason.trace.server": {
+          "type": "string",
+          "enum": ["off", "messages", "verbose"],
+          "default": "off",
+          "description": "Traces the communication between VS Code and the language server",
+          "scope": "resource"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "esbuild src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "compile:tests": "tsc",
+    "watch": "npm run compile -- --watch",
+    "pretest": "npm run compile && npm run compile:tests",
+    "test": "node ./out/test/runTest.js",
+    "test:unit": "npm run compile:tests && mocha --ui tdd out/test/**/*.test.js",
+    "lint": "eslint src --ext ts",
+    "clean": "rm -rf out node_modules .vscode-test"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.75.0",
+    "@vscode/test-electron": "^2.3.0",
+    "esbuild": "^0.19.0",
+    "fast-check": "^3.15.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.3.0"
+  }
+}

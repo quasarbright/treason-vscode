@@ -1,0 +1,5 @@
+{
+    "treason.racketPath": "test-racket",
+    "treason.serverScriptPath": "../treason/server.rkt",
+    "treason.trace.server": "off"
+}

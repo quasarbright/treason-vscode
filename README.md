@@ -214,4 +214,4 @@ Email: mdelmonacochs@gmail.com
 
 ## License
 
-See LICENSE file for details.
+MIT License - see the [LICENSE](LICENSE) file for details.

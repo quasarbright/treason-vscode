@@ -7,6 +7,7 @@
     "email": "mdelmonacochs@gmail.com",
     "name": "Mike Delmonaco"
   },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.75.0"
   },

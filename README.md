@@ -1,6 +1,6 @@
 # Treason Language Support
 
-A Visual Studio Code extension providing language support for the Treason programming language.
+A Visual Studio Code extension providing language support for the [Treason programming language](https://github.com/quasarbright/treason).
 
 ## Features
 
@@ -17,7 +17,7 @@ Before you begin, ensure you have the following installed:
 - **npm** (v6 or higher)
 - **Racket** - Required for the language server
 - **Visual Studio Code** (v1.75.0 or higher)
-- **Treason repository** - By default, this extension expects the Treason language implementation to be cloned at `../treason` (relative to this repository). The language server script should be located at `../treason/server.rkt`.
+- **Treason repository** - By default, this extension expects the [Treason language implementation](https://github.com/quasarbright/treason) to be cloned at `../treason` (relative to this repository). The language server script should be located at `../treason/server.rkt`.
 
 ### Project Setup
 
